@@ -7,14 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Microservices_POC_Products_netcore.Controllers
 {
-    public class ProductController
+    [Route("api/[controller]")]
+    public class ProductsController: Controller
     {
         DataAccess DBobj;
-        public ProductController()
-        {
-            //DBobj = d;
-        }
+
         // GET: api/Product
+        [HttpGet]
         public IEnumerable<Products> Get()
         {
             DBobj = new DataAccess();
@@ -22,6 +21,7 @@ namespace Microservices_POC_Products_netcore.Controllers
         }
 
         // GET: api/Product/5
+        [HttpGet("{id}")]
         public Products Get(int id)
         {
             DBobj = new DataAccess();
@@ -34,6 +34,7 @@ namespace Microservices_POC_Products_netcore.Controllers
         }
 
         // POST: api/Product
+        [HttpPost]
         public string Post([FromBody]Products P)
         {
             //var jsonString= JsonConvert.DeserializeObject<Products>(P);
@@ -50,7 +51,8 @@ namespace Microservices_POC_Products_netcore.Controllers
             return "Product " + str.ProductName.ToString() + " successfully inserted.";
         }
 
-        // PUT: api/Product/5        
+        // PUT: api/Product/5
+        [HttpPut]
         public string Put(int Id, [FromBody]Products P)
         {
             Products product = new Products();
@@ -65,6 +67,7 @@ namespace Microservices_POC_Products_netcore.Controllers
         }
 
         // DELETE: api/Product/5
+        [HttpDelete("{id}")]
         public string Delete(int id)
         {
             Products product = new Products();
