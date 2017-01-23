@@ -13,12 +13,12 @@ namespace Microservices_POC_Products_netcore
 
         public DataAccess()
         {
-            var MongoDBHost = "mongodb://sa:sa@ds127399.mlab.com:27399/";
+            //mongodb://localhost:27017
+            var MongoDBHost = "mongodb://sa:sa@ds127399.mlab.com:27399/alfred_products";
             var MongoDBName = "alfred_products";
             _client = new MongoClient(MongoDBHost);
             _server = _client.GetServer();
             _db = _server.GetDatabase(MongoDBName);
-            //_db = _server.GetDatabase("test");
         }
 
         public IEnumerable<Products> GetProducts()

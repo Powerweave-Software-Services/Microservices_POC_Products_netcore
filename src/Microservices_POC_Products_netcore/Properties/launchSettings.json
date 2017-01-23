@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/products",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -27,7 +27,7 @@
     },
     "Docker": {
       "launchBrowser": true,
-      "launchUrl": "http://localhost:{ServicePort}/api/values"
+      "launchUrl": "http://localhost:{ServicePort}/api/products"
     }
   }
 }
