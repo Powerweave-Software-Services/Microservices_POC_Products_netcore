@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  microservices_poc_products_netcore:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

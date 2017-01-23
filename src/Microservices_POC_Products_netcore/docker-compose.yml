@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  microservices_poc_products_netcore:
+    image: microservices_poc_products_netcore
+    build:
+      context: .
+      dockerfile: Dockerfile
